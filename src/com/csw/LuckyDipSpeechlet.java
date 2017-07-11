@@ -15,6 +15,7 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
+import com.csw.numbers.GenerateRandomNumbers;
 
 public class LuckyDipSpeechlet implements Speechlet {
     private static final Logger log = LoggerFactory.getLogger(LuckyDipSpeechlet.class);
@@ -91,7 +92,9 @@ public class LuckyDipSpeechlet implements Speechlet {
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getLuckyDipResponse() {
-        String speechText = "ChristianWeaves.com";
+    	GenerateRandomNumbers numbers = new GenerateRandomNumbers();
+    	numbers.generateNumbers();
+        String speechText = "Your lucky dip numbers are, " + numbers.getNumbers() + ".  Good luck!";
 
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
@@ -102,6 +105,7 @@ public class LuckyDipSpeechlet implements Speechlet {
         PlainTextOutputSpeech speech = new PlainTextOutputSpeech();
         speech.setText(speechText);
 
+      
         return SpeechletResponse.newTellResponse(speech, card);
     }
 
