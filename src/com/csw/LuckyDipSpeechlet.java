@@ -68,7 +68,7 @@ public class LuckyDipSpeechlet implements Speechlet {
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getWelcomeResponse() {
-        String speechText = "Welcome to the Alexa Skills Kit, you can say hello";
+        String speechText = "Welcome to Lucky Dip, you can say generate numbers for me to predict this weeks winning lotto numbers!";
 
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
@@ -115,7 +115,7 @@ public class LuckyDipSpeechlet implements Speechlet {
      * @return SpeechletResponse spoken and visual response for the given intent
      */
     private SpeechletResponse getHelpResponse() {
-        String speechText = "You can say hello to me!";
+        String speechText = "You can ask Lucky dip to generate numbers, this will generate 6 numbers for you to write down and enter into the Lotto draw!";
 
         // Create the Simple card content.
         SimpleCard card = new SimpleCard();
